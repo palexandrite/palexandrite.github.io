@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Alexander Leon Bulatov Blog</title>
+    <link href="https://palexandrite.github.io/blog" />
+    <link type="application/atom+xml" rel="self" href="https://palexandrite.github.io/blog/feed.atom" />
+    <updated>2023-03-03T13:46:51+00:00</updated>
+    <id>https://palexandrite.github.io/blog/feed.atom</id>
+    <author>
+        <name>Alexander Leon Bulatov</name>
+    </author>
+                <entry>
+    <id>https://palexandrite.github.io/blog/eighth-post</id>
+    <link type="text/html" rel="alternate" href="https://palexandrite.github.io/blog/eighth-post" />
+    <title>My Eight Post</title>
+    <published>2023-02-28T00:00:00+00:00</published>
+    <updated>2023-02-28T00:00:00+00:00</updated>
+    <author>
+        <name>Alexander Bulatov</name>
+    </author>
+    <summary type="html">This post is profoundly interesting.
+
+Red text title
+
+This is a text...</summary>
+    <content type="html"><![CDATA[
+        <p>This post is <em>profoundly</em> interesting.</p>
+
+<h6 id="identifier" class="text-danger">Red text title</h6>
+
+<p><span class="text-danger">This is a text</span></p>
+
+<pre><code class="language-php">class Foo extends bar
+{
+    public function fooBar()
+    {
+        //
+    }
+}
+</code></pre>
+    ]]></content>
+</entry>
+    </feed>
