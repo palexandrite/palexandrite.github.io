@@ -2,37 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>https://palexandrite.github.io/about</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://palexandrite.github.io/blog/feed.atom</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://palexandrite.github.io/blog</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://palexandrite.github.io</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
-  <changefreq>daily</changefreq>
- </url>
- <url>
-  <loc>https://palexandrite.github.io/blog/eighth-post</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://palexandrite.github.io/blog/tags/business</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://palexandrite.github.io/blog/tags/programming</loc>
-  <lastmod>2023-03-03T13:46:52+00:00</lastmod>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/eighth-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/fifth-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/first-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/nineth-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/seventh-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/tenth-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://palexandrite.github.io/blog/third-post</loc>
+  <lastmod>2023-03-06T06:34:58+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
