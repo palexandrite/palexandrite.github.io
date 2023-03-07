@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Alexander Leon Bulatov Blog</title>
-    <link href="https://palexandrite.github.io/blog" />
-    <link type="application/atom+xml" rel="self" href="https://palexandrite.github.io/blog/feed.atom" />
-    <updated>2023-03-06T07:14:39+00:00</updated>
-    <id>https://palexandrite.github.io/blog/feed.atom</id>
+    <title></title>
+    <link href="http://tiger-developer.ru/blog" />
+    <link type="application/atom+xml" rel="self" href="http://tiger-developer.ru/blog/feed.atom" />
+    <updated>2023-03-07T08:16:18+00:00</updated>
+    <id>http://tiger-developer.ru/blog/feed.atom</id>
     <author>
-        <name>Alexander Leon Bulatov</name>
+        <name></name>
     </author>
                 <entry>
-    <id>https://palexandrite.github.io/blog/eighth-post</id>
-    <link type="text/html" rel="alternate" href="https://palexandrite.github.io/blog/eighth-post" />
+    <id>http://tiger-developer.ru/blog/eighth-post</id>
+    <link type="text/html" rel="alternate" href="http://tiger-developer.ru/blog/eighth-post" />
     <title>My Eight Post</title>
     <published>2023-02-28T00:00:00+00:00</published>
     <updated>2023-02-28T00:00:00+00:00</updated>
