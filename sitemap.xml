@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
-  <loc>http://tiger-developer.ru/about</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/about</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru/blog/feed.atom</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/blog/feed.atom</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru/blog</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/blog</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru/blog/tags/business</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/blog/tags/business</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru/blog/tags/programming</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/blog/tags/programming</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
-  <loc>http://tiger-developer.ru/blog/eighth-post</loc>
-  <lastmod>2023-03-07T08:16:19+00:00</lastmod>
+  <loc>https://tiger-developer.ru/blog/eighth-post</loc>
+  <lastmod>2023-03-07T09:38:01+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>

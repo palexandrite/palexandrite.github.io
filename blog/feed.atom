@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title></title>
-    <link href="http://tiger-developer.ru/blog" />
-    <link type="application/atom+xml" rel="self" href="http://tiger-developer.ru/blog/feed.atom" />
-    <updated>2023-03-07T08:16:18+00:00</updated>
-    <id>http://tiger-developer.ru/blog/feed.atom</id>
+    <link href="https://tiger-developer.ru/blog" />
+    <link type="application/atom+xml" rel="self" href="https://tiger-developer.ru/blog/feed.atom" />
+    <updated>2023-03-07T09:38:00+00:00</updated>
+    <id>https://tiger-developer.ru/blog/feed.atom</id>
     <author>
         <name></name>
     </author>
                 <entry>
-    <id>http://tiger-developer.ru/blog/eighth-post</id>
-    <link type="text/html" rel="alternate" href="http://tiger-developer.ru/blog/eighth-post" />
+    <id>https://tiger-developer.ru/blog/eighth-post</id>
+    <link type="text/html" rel="alternate" href="https://tiger-developer.ru/blog/eighth-post" />
     <title>My Eight Post</title>
     <published>2023-02-28T00:00:00+00:00</published>
     <updated>2023-02-28T00:00:00+00:00</updated>
