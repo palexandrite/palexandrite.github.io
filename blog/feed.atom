@@ -3,40 +3,56 @@
     <title></title>
     <link href="https://tiger-developer.ru/blog" />
     <link type="application/atom+xml" rel="self" href="https://tiger-developer.ru/blog/feed.atom" />
-    <updated>2023-03-07T09:38:00+00:00</updated>
+    <updated>2023-03-09T14:12:31+00:00</updated>
     <id>https://tiger-developer.ru/blog/feed.atom</id>
     <author>
         <name></name>
     </author>
                 <entry>
-    <id>https://tiger-developer.ru/blog/eighth-post</id>
-    <link type="text/html" rel="alternate" href="https://tiger-developer.ru/blog/eighth-post" />
-    <title>My Eight Post</title>
-    <published>2023-02-28T00:00:00+00:00</published>
-    <updated>2023-02-28T00:00:00+00:00</updated>
+    <id>https://tiger-developer.ru/blog/soft-i-zizn</id>
+    <link type="text/html" rel="alternate" href="https://tiger-developer.ru/blog/soft-i-zizn" />
+    <title>Софт и жизнь</title>
+    <published>2023-03-09T00:00:00+00:00</published>
+    <updated>2023-03-09T00:00:00+00:00</updated>
     <author>
         <name>Alexander Leon Bulatov</name>
     </author>
-    <summary type="html">This post is profoundly interesting.
+    <summary type="html">Это мой приветственный пост (●&#039;◡&#039;●).
 
-Red text title
 
-This is a text...</summary>
+    
+    Спасибо за основу tenor.com → Poyolwl
+
+
+Итак, софт (или как мы его по просторечному называем - программа)......</summary>
     <content type="html"><![CDATA[
-        <p>This post is <em>profoundly</em> interesting.</p>
+        <p>Это мой приветственный пост (●'◡'●).</p>
 
-<h6 id="identifier" class="text-danger">Red text title</h6>
+<div class="d-flex flex-column mb-4">
+    <img src="/assets/images/posts/1/kitty-cat.gif" class="img-thumbnail w-25">
+    <small class="text-body-tertiary">Спасибо за основу tenor.com → Poyolwl</small>
+</div>
 
-<p><span class="text-danger">This is a text</span></p>
+<p>Итак, софт (или как мы его по просторечному называем - программа) выполняет роль набора инструкций компьютеру.</p>
 
-<pre><code class="language-php">class Foo extends bar
-{
-    public function fooBar()
-    {
-        //
-    }
-}
-</code></pre>
+<p>Компьютер выполняет эти инструкции и мы получаем результат.</p>
+
+<p>Но вопрос → как софт связан с жизнью?</p>
+
+<p>Тут ответ очевиден: мы сами определяем, как софт связан с жизнью.</p>
+
+<p>Поэтому, когда люди начинают думать о софте больше, чем о жизни и о рабочих задачах, которые перед <strong>нами</strong> стоят, то создание софта (и работа по его обслуживанию) начинает напоминать хомячков в колёсике :-)</p>
+
+<div class="d-flex flex-column mb-4">
+    <img src="/assets/images/posts/1/hamster-lol.gif" class="img-thumbnail w-50">
+    <small class="text-body-tertiary">Спасибо за основу tenor.com → Luna_Studios</small>
+</div>
+
+<p><strong>Мы</strong> ставим задачи этому софту и я лично выступаю за то, чтобы мы ориентировались не на хитросплетения наших архитектур, а от того какой результат нам нужно получить.</p>
+
+<p>И поэтому хотел бы предложить посмотреть, где мы можем использовать софт и что <em>мы</em> можем с помощью него сделать.</p>
+
+<p><a typt="button" class="btn btn-outline-primary">Читать продолжение</a></p>
     ]]></content>
 </entry>
     </feed>
