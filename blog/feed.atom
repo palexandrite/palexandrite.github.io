@@ -3,7 +3,7 @@
     <title></title>
     <link href="https://tiger-developer.ru/blog" />
     <link type="application/atom+xml" rel="self" href="https://tiger-developer.ru/blog/feed.atom" />
-    <updated>2023-03-09T14:12:31+00:00</updated>
+    <updated>2023-03-10T12:25:25+00:00</updated>
     <id>https://tiger-developer.ru/blog/feed.atom</id>
     <author>
         <name></name>
@@ -17,14 +17,7 @@
     <author>
         <name>Alexander Leon Bulatov</name>
     </author>
-    <summary type="html">Это мой приветственный пост (●&#039;◡&#039;●).
-
-
-    
-    Спасибо за основу tenor.com → Poyolwl
-
-
-Итак, софт (или как мы его по просторечному называем - программа)......</summary>
+    <summary type="html">Это мой приветственный пост (●&#039;◡&#039;●)... Компьютер выполняет эти инструкции и мы получаем результат....</summary>
     <content type="html"><![CDATA[
         <p>Это мой приветственный пост (●'◡'●).</p>
 
