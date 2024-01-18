@@ -1,0 +1,32 @@
+- id: home
+  translation: Главная
+
+- id: read_more
+  translation: Читать
+
+- id: send
+  translation: Отправить
+
+- id: related_posts
+  translation: Связанные статьи
+
+- id: categories
+  translation: Категории
+
+- id: tags
+  translation: Тэги
+
+- id: toc
+  translation: Содержимое
+
+- id: share
+  translation: Поделиться
+
+- id: search_input_placeholder
+  translation: Ищем статью ...
+
+- id: no_results_for
+  translation: Нет результатов для
+
+- id: empty_search_results_placeholder
+  translation: Начните печатать и найдите, то, что Вам нужно...

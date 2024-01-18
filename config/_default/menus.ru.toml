@@ -1,0 +1,24 @@
+############# Russian navigation ##############
+
+# main menu
+[[main]]
+name = "Обо мне"
+url = "obo-mne/"
+weight = 1
+
+[[main]]
+name = "Блог"
+url = "blog/"
+weight = 2
+
+
+# footer menu
+[[footer]]
+name = "Обо мне"
+url = "obo-mne/"
+weight = 1
+
+[[footer]]
+name = "Блог"
+url = "blog/"
+weight = 2

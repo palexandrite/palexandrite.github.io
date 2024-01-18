@@ -1,0 +1,1 @@
+# © Alexander L. Bulatov, 2024. All rights reserved.

@@ -1,0 +1,69 @@
+{{ define "main" }}
+
+    <section class="section-sm pb-0">
+        <div class="container">
+            <div class="row border-border dark:border-darkmode-border justify-center border-b pb-14">
+                <div class="lg:col-4 text-center">
+
+                    {{ $image:= .Params.image }}
+                    {{ if $image }}
+                        {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "mx-auto" "Size" "200x200") }}
+                    {{ else if .Params.Email }}
+                        <img
+                        class="mx-auto"
+                        alt="{{ .Title }}"
+                        height="200"
+                        width="200"
+                        src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
+                    {{ end }}
+
+                    <h1 class="h3 mt-10">{{ .Title }}</h1>
+
+                    <div class="content mt-6">
+                        {{ .Content }}
+                    </div>
+
+                    <ul class="social-icons ml-4 mt-10 text-center">
+
+                        {{ range .Params.social }}
+                            <li>
+                                <a
+                                href="{{ .link | safeURL }}"
+                                target="_blank"
+                                rel="noopener nofollow">
+                                <span class="sr-only">{{ .title }}</span>
+                                <i class="{{ .icon }}"></i>
+                                </a>
+                            </li>
+                        {{ end }}
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="row pb-16 pt-14">
+
+                {{ $filterByAuthor := where site.RegularPages "Params.author" "==" .Title }}
+                {{ range $filterByAuthor.GroupByPublishDate "2006" }}
+                    <div class="flex max-md:flex-col mb-6">
+                        <div class="mr-7 opacity-60 text-2xl">{{ .Key }}</div>
+
+                        <ul class="grow">
+                            {{ range .Pages }}
+                                <li class="border-b border-dashed mb-3">
+                                    <a href="{{ .RelPermalink }}" class="flex justify-between items-baseline pb-3 hover:text-sky-700 dark:hover:text-sky-200">
+                                        <span>{{ .Title }}</span>
+                                        <span class="shrink-0 opacity-60">{{ time.Format ":date_long" .PublishDate }}</span>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
+                
+            </div>
+        </div>
+    </section>
+
+{{ end }}

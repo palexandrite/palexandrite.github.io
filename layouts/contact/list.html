@@ -1,0 +1,64 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+
+    <section class="section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="md:col-10 lg:col-6 mx-auto">
+
+                    <div class="mb-10 text-xl font-medium">
+                        {{ .Params.special_header_message }}: <br>
+                        <a href="https://t.me/alexander_bulatov" target="_blank" class="text-indigo-700">@alexander_bulatov</a>
+                    </div>
+
+                    <hr class="mb-10">
+
+                    <iframe style="border:none;width:100%;" height="410px" src="https://noteforms.com/forms/db4463eb-0377-41ac-9810-ef750caf350a?hide_title=true"></iframe>
+
+                    <!-- <form action="{{ site.Params.contact_form_action }}" method="POST">
+
+                        <div class="mb-6">
+                            <label for="name" class="form-label">
+                                Full Name <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                id="name"
+                                name="name"
+                                class="form-input"
+                                placeholder="John Doe"
+                                type="text" />
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="form-label">
+                                Working Mail <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="john.doe@email.com"
+                                type="email" />
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="form-label">
+                                Anything else? <span class="text-red-500">*</span>
+                            </label>
+                            <textarea
+                            id="message"
+                            name="message"
+                            class="form-input"
+                            placeholder="Message goes here..."
+                            rows="8"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}
