@@ -1,2 +1,7 @@
 User-agent: *
-Disallow: /
+
+Disallow: /ru/privacy-policy
+Disallow: /privacy-policy
+
+Disallow: /ru/contact
+Disallow: /contact

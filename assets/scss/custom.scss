@@ -17,3 +17,16 @@ mark.brushed::before {
     filter: invert(46%) sepia(27%) saturate(6122%) hue-rotate(221deg) brightness(150%) contrast(101%);
     margin-top: 1.7rem;
 }
+
+.content :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.content :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.content :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.content :is(:where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.content :is(:where(h5):not(:where([class~="not-prose"],[class~="not-prose"] *))),
+.content :is(:where(h6):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+    @apply font-secondary text-dark dark:text-darkmode-dark font-bold leading-tight;
+}
+
+.nav-link {
+    @apply dark:hover:text-darkmode-light;
+}
