@@ -47,10 +47,10 @@ link = "contact"
 enable = true
 primary_color = "#121212"
 include_sections = ["blog"]
-show_image = true
-show_description = true
+show_image = false
+show_description = false
 show_tags = true
-show_categories = true
+show_categories = false
 
 
 # seo meta data for OpenGraph / Twitter Card
