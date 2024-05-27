@@ -1,0 +1,69 @@
+{{ $context := .Context }}
+{{ $class := .Class }}
+{{ $base := site.Home.Permalink }}
+
+<ul class="{{ $class }} inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="{{ $base }}">
+      {{ i18n "home" | default "Home" }}
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+
+
+  {{ range $index, $Page := $context.Ancestors.Reverse }}
+
+    {{ if and (not .IsHome) (ne .Title "Pages") }}
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="{{ .RelPermalink }}">
+
+          {{ if eq .Title "Tags" }}
+            {{ i18n "tags" }}
+          {{ else }}
+            {{ "<>" }}
+          {{ end }}
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    {{ end }}
+
+  {{ end }}
+  
+
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+
+      {{ if eq site.LanguageCode "ru" }}
+
+        {{ if eq $context.Title "Tags" }}
+
+          {{ i18n "tags" }}
+
+        {{ else if eq $context.Slug "kontact" }}
+
+          {{ $title := $context.Title | lower }}
+
+          {{ $title | humanize }}
+
+        {{ else if eq $context.Slug "blog" }}
+
+          {{ $context.Title }}
+
+        {{ else }}
+
+          {{ i18n $context.Title }}
+
+        {{ end }}
+
+      {{ else }}
+
+        {{ $context.Title }}
+
+      {{ end }}
+
+    </span>
+  </li>
+</ul>

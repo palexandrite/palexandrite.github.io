@@ -22,11 +22,54 @@
 - id: share
   translation: Поделиться
 
-- id: search_input_placeholder
-  translation: Ищем статью ...
-
 - id: no_results_for
   translation: Нет результатов для
 
+
+
+# Global Search
+
+- id: search_input_placeholder
+  translation: Ищем статью ...
+
+- id: search_no_results
+  translation: Нет результатов для
+
+- id: search_initial_message
+  translation: Напечатайте что-то, что хотите найти...
+
+- id: search_navigate
+  translation: Для навигации
+
+- id: search_select
+  translation: Для выбора
+
+- id: search_close
+  translation: Для закрытия окна
+
 - id: empty_search_results_placeholder
   translation: Начните печатать и найдите, то, что Вам нужно...
+
+
+
+# Tags
+- id: chasti-diska
+  translation: части диска
+
+- id: elemnty-fiylovoy-systemy
+  translation: элементы файловой системы
+
+- id: LBA
+  translation: LBA
+
+- id: lba
+  translation: LBA
+
+- id: matematika
+  translation: математика
+
+- id: mnozestva
+  translation: множества
+
+- id: technologii
+  translation: технологии

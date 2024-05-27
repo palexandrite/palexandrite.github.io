@@ -4,7 +4,7 @@ meta_title: "ИИ стар как мир?! — Alexander L. Bulatov's Blog"
 description: "Мода на ИИ существует уже долгое время, которую можно наблюдать в.."
 date: 2023-04-07T14:35:31+05:00
 author: "Alexander L. Bulatov"
-tags: ["technology"]
+tags: ["technologii"]
 slug: "ii-star-kak-mir"
 draft: false
 ---

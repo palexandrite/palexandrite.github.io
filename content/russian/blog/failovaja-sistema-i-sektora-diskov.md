@@ -4,7 +4,7 @@ meta_title: ""
 description: ""
 date: "2024-02-14T16:47:43+05:00"
 author: "Alexander L. Bulatov"
-tags: ["LBA", "disk parts", "file system parts"]
+tags: ["LBA", "chasti-diska", "elemnty-fiylovoy-systemy"]
 slug: "failovaja-sistema-i-sektora-diskov"
 draft: false
 ---

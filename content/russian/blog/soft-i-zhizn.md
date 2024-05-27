@@ -4,7 +4,7 @@ meta_title: "Софт и жизнь — Alexander Leon Bulatov's Blog"
 description: "Это мой приветственный пост (●'◡'●)..."
 date: 2023-04-14T12:08:34+05:00
 author: "Alexander L. Bulatov"
-tags: ["technology"]
+tags: ["technologii"]
 slug: "soft-i-zhizn"
 draft: false
 ---

@@ -4,7 +4,7 @@ meta_title: "Программист - проводник информации �
 description: "Программист связывает одну информацию с другой и..."
 date: 2023-04-07T13:45:20+05:00
 author: "Alexander L. Bulatov"
-tags: ["technology"]
+tags: ["technologii"]
 slug: "programmist-provodnik-informatsii"
 draft: false
 ---

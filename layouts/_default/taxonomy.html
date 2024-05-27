@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+    {{ .Scratch.Set "isShouldBeTranslated" true }}
+
     {{ partial "page-header" . }}
 
     <section class="section">
@@ -17,7 +19,9 @@
                                     <li class="border-b border-dashed mb-3">
                                         <a href="{{ .RelPermalink }}" class="flex justify-between items-baseline pb-3 hover:text-sky-700 dark:hover:text-sky-200">
                                             <span>{{ .Title }}</span>
-                                            <span class="shrink-0 opacity-60">{{ time.Format ":date_long" .PublishDate }}</span>
+                                            <span class="shrink-0 opacity-60">
+                                                {{ time.Format ":date_long" .PublishDate }}
+                                            </span>
                                         </a>
                                     </li>
                                 {{ end }}

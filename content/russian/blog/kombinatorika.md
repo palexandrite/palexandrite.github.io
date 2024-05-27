@@ -4,7 +4,7 @@ meta_title: "Комбинаторика"
 description: "Основы Комбинаторики."
 date: "2024-02-03T21:59:49+05:00"
 author: "Alexander L. Bulatov"
-tags: ["mathematics"]
+tags: ["matematika"]
 slug: "kombinatorika-chast-1"
 draft: true
 ---

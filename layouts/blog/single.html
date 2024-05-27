@@ -42,17 +42,52 @@
           </div>
           <div class="row items-start justify-between">
             <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
-              <h5 class="mr-3">{{ i18n "tags" }} :</h5>
+
+              <h5 class="mr-3">{{ i18n "tags" }}&nbsp;:</h5>
+
               <ul>
-                {{ $tags:= .Params.tags }}
-                {{ range $i,$p:= $tags }}
+                {{ $tags := .Params.tags }}
+
+                {{ range $index, $value := $tags }}
+
                   <li class="inline-block">
                     <a
                       class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
                       href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                      {{ . | humanize }}
+
+                      {{ $uppered := . | upper }}
+
+                      {{ $isUppered := eq . $uppered }}
+
+                      {{ if eq site.LanguageCode "ru" }}
+
+                        {{ if $isUppered }}
+
+                          {{ i18n . }}
+
+                        {{ else }}
+
+                          {{ i18n . | humanize }}
+
+                        {{ end }}
+
+                      {{ else }}
+
+                        {{ if $isUppered }}
+
+                          {{ . }}
+
+                        {{ else }}
+
+                          {{ . | humanize }}
+
+                        {{ end }}
+
+                      {{ end }}
+                      
                     </a>
                   </li>
+
                 {{ end }}
               </ul>
             </div>

@@ -22,11 +22,34 @@
 - id: share
   translation: Share
 
-- id: search_input_placeholder
-  translation: Search Post ...
-
 - id: no_results_for
   translation: No results for
 
+
+
+# Global Search
+
+- id: search_input_placeholder
+  translation: Search Post ...
+
+- id: search_no_results
+  translation: No results for
+
+- id: search_initial_message
+  translation: Type something to search...
+
+- id: search_navigate
+  translation: to navigate
+
+- id: search_select
+  translation: to select
+
+- id: search_close
+  translation: to close
+
 - id: empty_search_results_placeholder
-  translation: Type something to search..
+  translation: Type something to search...
+
+
+
+# Tags

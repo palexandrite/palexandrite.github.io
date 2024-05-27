@@ -4,7 +4,7 @@ meta_title: "Я — многоликий программист! — Alexander L
 description: "Прокаченный программист это..."
 date: 2023-04-14T12:32:18+05:00
 author: "Alexander L. Bulatov"
-tags: ["technology"]
+tags: ["technologii"]
 slug: "ya-mnogolikiy-programmist"
 draft: false
 ---

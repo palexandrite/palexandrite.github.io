@@ -4,7 +4,7 @@ meta_title: "Я хочу весь мир с вишенкой на торте с 
 description: "Я хочу весь мир с вишенкой на торте с двоичным миллионом."
 date: 2023-04-14T13:18:17+05:00
 author: "Alexander L. Bulatov"
-tags: ["technology"]
+tags: ["technologii"]
 slug: "ya-hochu-ves-mir-s-vishenkoy-na-torte-s-dvoichnym-millionomyu"
 draft: false
 ---
