@@ -52,6 +52,10 @@
 
           {{ $context.Title }}
 
+        {{ else if eq $context.Slug "portfolio" }}
+
+          {{ $context.Title }}
+
         {{ else }}
 
           {{ i18n $context.Title }}
