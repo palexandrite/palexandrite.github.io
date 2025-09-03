@@ -2,7 +2,7 @@
 title: "I am a multi—faceted programmer!"
 meta_title: "I am a multi—faceted programmer! — Alexander Leon Bulatov's Blog"
 description: "A 'pumped-up' programmer is..."
-date: 2023-04-14T12:31:01+05:00
+date: "2023-04-14T12:31:01+05:00"
 author: "Alexander L. Bulatov"
 tags: ["technology"]
 slug: "i-am-a-multi-faceted-programmer"
