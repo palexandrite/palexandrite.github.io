@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "isShouldBeTranslated" true }}
+
+{{ partial "page-header" . }}
+
+    <section class="section">
+        <div class="container">
+            <div class="row gx-5">
+
+                <!-- blog posts -->
+                <div class="lg:col-8">
+
+
+
+
+
+
+
+
+
+
+
+
+                    {{/*  {{ range .Pages.GroupByPublishDate "2006" }}
+                        <div class="flex max-md:flex-col mb-6">
+                            <div class="mr-7 opacity-60 text-2xl">{{ .Key }}</div>
+
+                            <ul class="grow">
+                                {{ range .Pages }}
+                                    <li class="border-b border-dashed mb-3">
+                                        <a href="{{ .RelPermalink }}" class="flex justify-between items-baseline pb-3 hover:text-sky-700 dark:hover:text-sky-200">
+                                            <span>{{ .Title }}</span>
+                                            <span class="shrink-0 opacity-60">{{ time.Format ":date_long" .PublishDate }}</span>
+                                        </a>
+                                    </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    {{ end }}  */}}
+                </div>
+
+                <!-- sidebar -->
+                <div class="lg:col-4">
+                    <!-- widget -->
+                    {{/*  {{ $widget:= site.Params.widgets.sidebar }}
+                    {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}  */}}
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{{ end }}
