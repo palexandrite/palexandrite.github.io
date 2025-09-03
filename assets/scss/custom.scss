@@ -1,21 +1,17 @@
 // Add your own custom styles here
 
 mark.brushed {
-    background-color: transparent;
-    position: relative;
-    z-index: 0;
+    @apply relative z-0 bg-transparent;
+
+    &::before {
+        content: "";
+        @apply absolute bottom-0 left-0 right-0 top-0 -z-[1] mt-[1.7rem];
+        filter: invert(46%) sepia(27%) saturate(6122%) hue-rotate(221deg) brightness(173%) contrast(101%);
+    }
 }
 
-mark.brushed::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    filter: invert(46%) sepia(27%) saturate(6122%) hue-rotate(221deg) brightness(150%) contrast(101%);
-    margin-top: 1.7rem;
+.dark mark.brushed::before {
+    filter: invert(46%) sepia(27%) saturate(6122%) hue-rotate(221deg) brightness(48%) contrast(101%);
 }
 
 .content :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))),
