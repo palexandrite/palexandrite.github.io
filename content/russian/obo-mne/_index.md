@@ -41,7 +41,7 @@ draft: false
 </p>
 
 <p class="mt-5">
-  	Со мной можно связаться по email: <br>
+  	Со мной можно связаться по email 👇👇👇 <br>
     <a href="mailto:ialexander.bulatov@gmail.com" class="text-xl text-indigo-700 dark:text-violet-300">
         ialexander.bulatov@gmail.com
     </a>

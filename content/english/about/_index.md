@@ -41,7 +41,7 @@ And I use next technologies in my work:
 </p>
 
 <p class="mt-5">
-    You can contact me by the email: <br>
+    You can contact me by the email 👇👇👇<br>
     <a href="mailto:ialexander.bulatov@gmail.com" class="text-xl text-indigo-700 dark:text-violet-300">
         ialexander.bulatov@gmail.com
     </a>
