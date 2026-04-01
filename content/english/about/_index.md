@@ -2,7 +2,7 @@
 title: "Hello,"
 meta_title: "About"
 description: "About the blog."
-image: "/images/me.png"
+image: "/images/me.jpg"
 draft: false
 ---
 
@@ -10,22 +10,27 @@ draft: false
   My name is <small class="h4" style="color: var(--site-blue-hover)">Alexander L. Bulatov</small>.
 </h2>
 
-I am proficient in a web domain as a web developer.
+This blog is my own place for expressing stuff and you may find them useful. If so, please, enjoy :-)
+
+And let me introduce myself.
+
+What about me, I am proficient in a web domain as a web developer, in a software domain as a software developer, and in a mobile domain as a mobile developer.
 
 I compose programmes using next languages:
 
 <ul class="fa-ul">
 	<li><span class="fa-li"><i class="fa-brands fa-php"></i></span>PHP</li>
 	<li><span class="fa-li"><i class="fa-brands fa-square-js"></i></span>JavaScript</li>
-	<li><span class="fa-li"><i class="fa-brands fa-python"></i></span>Python</li>
+	<li><span class="fa-li"><i class="fa-brands fa-golang"></i></span>Go</li>
+	<li><span class="fa-li"><i class="fa-brands fa-android"></i></span>Kotlin/Java</li>
 </ul>
 
 And I use next technologies in my work:
 
 <ul class="fa-ul">
     <li><span class="fa-li"><i class="fa-brands fa-laravel"></i></span>Laravel</li>
-    <li><span class="fa-li"><i class="fa-solid fa-seedling"></i></span>Yii2</li>
-    <li><span class="fa-li"><i class="fa-brands fa-react"></i></span>ReactJS</li>
+    <li><span class="fa-li"><i class="fa-solid fa-seedling"></i></span>Yii3</li>
+    <li><span class="fa-li"><i class="fa-brands fa-vuejs"></i></span>VueJS</li>
     <li><span class="fa-li"><i class="fa-brands fa-docker"></i></span>Docker</li>
     <li><span class="fa-li"><i class="fa-brands fa-git-alt"></i></span>Git</li>
 </ul>
@@ -36,6 +41,8 @@ And I use next technologies in my work:
 </p>
 
 <p class="mt-5">
-    You can contact me by Telegram: <br>
-    <a href="https://t.me/alexander_bulatov" target="_blank" class="text-indigo-700">@alexander_bulatov</a>
+    You can contact me by the email: <br>
+    <a href="mailto:ialexander.bulatov@gmail.com" class="text-indigo-700">
+        ialexander.bulatov@gmail.com
+    </a>
 </p>

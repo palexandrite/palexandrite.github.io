@@ -1,12 +1,12 @@
 ---
 # Banner
 banner:
-  title: "Burn to be"
-  content: "Read to be"
+  title: "How much good there is in the worst of us"
+  content: "How much bad there is in the best of us"
   image: "/images/banner.png"
   button:
     enable: true
-    label: "Read"
+    label: "Start reading"
     link: "/blog"
 
 # Features

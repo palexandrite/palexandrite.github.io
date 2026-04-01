@@ -1,12 +1,12 @@
 ---
 # Banner
 banner:
-  title: "Рождён — быть"
-  content: "Читать — знать"
+  title: "Как много хорошего в худших из нас"
+  content: "Как много плохого в лучших из нас"
   image: "/images/banner.png"
   button:
     enable: true
-    label: "Читать"
+    label: "Начать читать"
     link: "/ru/blog"
 
 # Features
