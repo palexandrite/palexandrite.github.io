@@ -1,3 +1,4 @@
+{{ with (templates.Defer (dict "key" "global-styles" "data" .)) }}
 <!-- DNS preconnect -->
 <meta http-equiv="x-dns-prefetch-control" content="on" />
 <link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
@@ -15,8 +16,8 @@
 <link rel="dns-prefetch" href="//platform.twitter.com" />
 
 <!-- google fonts -->
-{{ $pf:= site.Data.theme.fonts.font_family.primary }}
-{{ $sf:= site.Data.theme.fonts.font_family.secondary }}
+{{ $pf:= hugo.Data.theme.fonts.font_family.primary }}
+{{ $sf:= hugo.Data.theme.fonts.font_family.secondary }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <script>
@@ -50,7 +51,27 @@
 {{ end }}
 
 {{/* main style */}}
-{{ $styles = $styles | append (resources.Get "scss/main.scss" | css.Sass) }}
+{{ $styles = $styles | append (resources.Get "css/main.css") }}
+{{ range (slice
+  "css/base.css"
+  "css/components.css"
+  "css/navigation.css"
+  "css/buttons.css"
+  "css/utilities.css"
+  "css/search.css"
+  "css/social-share.css"
+  "css/gallery-slider.css"
+  "css/images.css"
+  "css/toc.css"
+  "css/tab.css"
+  "css/accordion.css"
+  "css/modal.css"
+  "css/notice.css"
+  "css/module-overrides.css"
+  "css/custom.css"
+) }}
+  {{ $styles = $styles | append (resources.Get .) }}
+{{ end }}
 {{ $styles = $styles | resources.Concat "css/style.css" }}
 {{ $styles = $styles | css.PostCSS }}
 
@@ -58,8 +79,8 @@
 {{ $stylesLazy = $stylesLazy | css.PostCSS }}
 
 {{ if hugo.IsProduction }}
-  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint | resources.PostProcess }}
-  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint | resources.PostProcess }}
+  {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint }}
+  {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . | minify | fingerprint }}
 {{ else }}
   {{ $styles = $styles | resources.ExecuteAsTemplate "css/style.css" . }}
   {{ $stylesLazy = $stylesLazy | resources.ExecuteAsTemplate "css/style-lazy.css" . }}
@@ -80,3 +101,4 @@
   integrity="{{ $stylesLazy.Data.Integrity }}"
   media="print"
   onload="this.media='all'; this.onload=null;" />
+{{ end }}

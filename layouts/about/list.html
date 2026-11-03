@@ -1,15 +1,84 @@
 {{ define "main" }}
-    <section class="section-sm">
-        <div class="container">
-            <div class="row justify-center">
-                <div class="md:col-10 lg:col-7">
-                    {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "mx-auto mb-6 w-24 rounded") }}
+  {{ $portrait := resources.Get "images/aboutwithbeard.png" }}
+  {{ $portrait = $portrait.Resize "960x960 webp q90" }}
 
-                    <h2 class="h3 mb-6">{{ .Title }}</h2>
-
-                    <div class="content">{{ .Content }}</div>
-                </div>
-            </div>
+  <section class="about-page">
+    <div class="container about-container">
+      <header class="about-hero">
+        <div class="about-portrait-stage" aria-hidden="true">
+          <img
+            src="{{ $portrait.RelPermalink }}"
+            width="{{ $portrait.Width }}"
+            height="{{ $portrait.Height }}"
+            alt=""
+            loading="eager" />
         </div>
-    </section>
+
+        <div class="about-hero-copy">
+          <p class="about-eyebrow">{{ .Title }}</p>
+          <h1>
+            <span class="about-name-prefix">{{ .Params.name_prefix }}</span>
+            <span class="about-name">{{ .Params.name }}</span>
+          </h1>
+          <p class="about-role">{{ .Params.role }}</p>
+          <p class="about-intro">{{ .Params.intro }}</p>
+          <a class="about-button" href="mailto:ialexander.bulatov@gmail.com">
+            {{ .Params.contact_button }}
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <div class="about-grid">
+        <section class="about-story">
+          <p class="about-section-label">{{ .Params.story_label }}</p>
+          <h2>{{ .Params.story_heading }}</h2>
+          <p>{{ .Params.story }}</p>
+          <div class="about-approach">
+            <h3>{{ .Params.approach_heading }}</h3>
+            <p>{{ .Params.approach }}</p>
+          </div>
+        </section>
+
+        <div class="about-sidebar">
+          <section class="about-toolkit">
+            <p class="about-section-label">{{ .Params.toolkit_label }}</p>
+            <h2>{{ .Params.toolkit_heading }}</h2>
+
+            <div class="about-skill-group">
+              <h3>{{ .Params.languages_heading }}</h3>
+              <ul>
+                {{ range .Params.languages }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </div>
+
+            <div class="about-skill-group">
+              <h3>{{ .Params.technologies_heading }}</h3>
+              <ul>
+                {{ range .Params.technologies }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </div>
+          </section>
+
+          <section class="about-contact">
+            <p class="about-section-label">{{ .Params.contact_label }}</p>
+            <h2>{{ .Params.contact_heading }}</h2>
+            <p>{{ .Params.contact_copy }}</p>
+            <a href="mailto:ialexander.bulatov@gmail.com">
+              ialexander.bulatov@gmail.com
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h11m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}

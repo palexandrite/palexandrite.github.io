@@ -1,10 +1,9 @@
-name = "Hugoplate"
+name = "Palexandrite"
 license = "MIT"
 licenselink = "https://github.com/zeon-studio/hugoplate/blob/main/LICENSE"
-description = "Hugoplate is a free starter template built with Hugo, and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-homepage = "https://github.com/zeon-studio/hugoplate"
-demosite = "https://zeon.studio/preview?project=hugoplate"
-min_version = "0.118.2"
+description = "Custom multilingual personal website theme built with Hugo and Tailwind CSS."
+homepage = "https://palexandrite.github.io/"
+min_version = "0.158.0"
 
 tags = [
   "blog",
@@ -29,8 +28,8 @@ features = [
 ]
 
 [author]
-name = "Zeon Studio"
-homepage = "https://zeon.studio"
+name = "Alexander L. Bulatov"
+homepage = "https://palexandrite.github.io/"
 
 [original]
 author = "Zeon Studio"

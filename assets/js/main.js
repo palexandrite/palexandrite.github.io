@@ -15,6 +15,49 @@
     });
   });
 
+  // Home page title typewriter
+  // ----------------------------------------
+  const heroTitle = document.querySelector(".hero-title-typewriter");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (heroTitle && !reduceMotion) {
+    const characters = Array.from(heroTitle.textContent.trim());
+    let characterIndex = 0;
+    const renderTitle = () => {
+      heroTitle.textContent = characters.slice(0, characterIndex).join("");
+    };
+
+    heroTitle.classList.add("is-typing");
+
+    const deleteNextCharacter = () => {
+      characterIndex -= 1;
+      renderTitle();
+
+      if (characterIndex > 0) {
+        window.setTimeout(deleteNextCharacter, 45);
+      } else {
+        window.setTimeout(typeNextCharacter, 300);
+      }
+    };
+
+    const typeNextCharacter = () => {
+      characterIndex += 1;
+      renderTitle();
+
+      if (characterIndex < characters.length) {
+        window.setTimeout(typeNextCharacter, 70);
+      } else {
+        window.setTimeout(deleteNextCharacter, 10000);
+      }
+    };
+
+    characterIndex = 0;
+    renderTitle();
+    window.setTimeout(typeNextCharacter, 300);
+  }
+
   // Testimonial Slider
   // ----------------------------------------
   new Swiper(".testimonial-slider", {

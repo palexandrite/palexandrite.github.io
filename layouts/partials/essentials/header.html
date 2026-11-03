@@ -4,9 +4,7 @@
     <!-- logo -->
     <div class="order-0">
       <!-- navbar brand/logo -->
-      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}">
-        {{ partial "logo" }}
-      </a>
+      {{ partial "components/brand-logo" (dict "Context" . "Class" "navbar-brand block") }}
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />

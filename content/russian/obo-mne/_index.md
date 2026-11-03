@@ -1,48 +1,36 @@
 ---
 title: "Приветствую,"
+name_prefix: "Меня зовут"
+name: "Александр Л. Булатов"
 meta_title: "Обо мне"
-description: "Я здесь рассказываю о себе"
-image: "/images/me.jpg"
+description: "Немного об Александре, его работе и идеях этого блога."
 type: "about"
 layout: "list"
 draft: false
+role: "Веб · программное обеспечение · мобильные приложения"
+intro: "Я разрабатываю продукты для веба, программного обеспечения и мобильных устройств — и люблю превращать смелые идеи в полезные решения."
+contact_button: "Написать мне"
+story_label: "01 / ИСТОРИЯ"
+story_heading: "Место для идей"
+story: "Этот блог — моё личное пространство для мыслей, экспериментов и того, чему я научился. Если здесь найдётся что-то полезное для вас — значит, я пишу не зря."
+approach_heading: "От первой идеи до запуска"
+approach: "Мне интересно разбираться в разных операционных системах и создавать сайты, веб-приложения и платформы, которые помогают бизнесу расти."
+toolkit_label: "02 / ИНСТРУМЕНТЫ"
+toolkit_heading: "С чем я работаю"
+languages_heading: "Языки"
+languages:
+  - PHP
+  - JavaScript
+  - Go
+  - Kotlin / Java
+technologies_heading: "Технологии"
+technologies:
+  - Laravel
+  - Yii3
+  - Vue.js
+  - Docker
+  - Git
+contact_label: "03 / ВАША ИДЕЯ"
+contact_heading: "Давайте воплотим её."
+contact_copy: "Задумали сайт, приложение или платформу? Расскажите мне о ней."
 ---
-
-<h2 class="h5">
-  Меня зовут <small class="h4" style="color: var(--site-blue-hover)">Александр Л. Булатов</small>.
-</h2>
-
-Этот блог - мое личное место для выражения своих мыслей, и вы можете найти их полезными. Если да, то, пожалуйста, наслаждайтесь :-)
-
-И позвольте мне представиться.
-
-Что касается меня, то я хорошо разбираюсь в веб-области как веб-разработчик, в области программного обеспечения как разработчик программного обеспечения и в мобильной области как мобильный разработчик.
-
-<ul class="fa-ul">
-	<li><span class="fa-li"><i class="fa-brands fa-php"></i></span>PHP</li>
-	<li><span class="fa-li"><i class="fa-brands fa-square-js"></i></span>JavaScript</li>
-	<li><span class="fa-li"><i class="fa-brands fa-golang"></i></span>Go</li>
-	<li><span class="fa-li"><i class="fa-brands fa-android"></i></span>Kotlin/Java</li>
-</ul>
-
-И использую в своей работе следующие технологии:
-
-<ul class="fa-ul">
-    <li><span class="fa-li"><i class="fa-brands fa-laravel"></i></span>Laravel</li>
-    <li><span class="fa-li"><i class="fa-solid fa-seedling"></i></span>Yii3</li>
-    <li><span class="fa-li"><i class="fa-brands fa-vuejs"></i></span>VueJS</li>
-    <li><span class="fa-li"><i class="fa-brands fa-docker"></i></span>Docker</li>
-    <li><span class="fa-li"><i class="fa-brands fa-git-alt"></i></span>Git</li>
-</ul>
-
-<p>
-    Мне нравятся различные операционные системы и готов создать для вас любую систему, <br> которая будет платформой для Вашего бизнеса 
-    <i class="fa-solid fa-rocket fa-xl fa-bounce" style="color: var(--site-blue-hover)"></i>.
-</p>
-
-<p class="mt-5">
-  	Со мной можно связаться по email 👇👇👇 <br>
-    <a href="mailto:ialexander.bulatov@gmail.com" class="text-xl text-indigo-700 dark:text-violet-300">
-        ialexander.bulatov@gmail.com
-    </a>
-</p>

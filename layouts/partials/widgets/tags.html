@@ -19,7 +19,7 @@
                 m-1 block rounded bg-white px-3 py-1 hover:text-white"
                 href="{{ .Page.RelPermalink }}">
 
-                {{ if eq site.LanguageCode "ru" }}
+                {{ if eq site.Language.Locale "ru" }}
 
                   {{ i18n $name | humanize }}
 

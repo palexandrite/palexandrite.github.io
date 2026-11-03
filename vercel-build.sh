@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # default versions
-NODE_VERSION='18.16.1';
+NODE_VERSION='22';
 GO_VERSION='1.20.5';
-HUGO_VERSION='0.118.2';
+HUGO_VERSION='0.158.0';
 
 # install Node.js
 # echo "Installing Node.js $NODE_VERSION..."
@@ -29,10 +29,6 @@ tar -xzf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 mv hugo /usr/local/bin/
 rm -rf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 hugo version
-
-# project setup
-echo "Project setting up..."
-npm run project-setup
 
 # install dependencies
 echo "Installing project dependencies..."

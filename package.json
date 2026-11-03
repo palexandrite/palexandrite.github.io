@@ -1,34 +1,40 @@
 {
-  "name": "hugoplate",
-  "description": "hugo tailwindcss boilerplate",
+  "name": "palexandrite.github.io",
+  "description": "Personal website and blog built with Hugo",
   "version": "1.10.0",
   "license": "MIT",
-  "author": "zeon.studio",
+  "author": "Alexander L. Bulatov",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
     "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
-    "dev:example": "cd exampleSite; hugo server",
-    "build:example": "cd exampleSite; hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
-    "preview:example": "cd exampleSite; hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
-    "update-modules": "node ./scripts/clearModules.js && hugo mod clean --all && hugo mod get -u ./... && hugo mod tidy",
-    "remove-darkmode": "node ./scripts/removeDarkmode.js && yarn format",
-    "project-setup": "node ./scripts/projectSetup.js",
-    "theme-setup": "node ./scripts/themeSetup.js",
-    "update-theme": "node ./scripts/themeUpdate.js",
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "postcss-cli": "^11.0.0",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "postcss": "^8.5.32",
+    "postcss-cli": "^11.0.1",
     "prettier": "^3.1.1",
     "prettier-plugin-go-template": "0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwind-bootstrap-grid": "^5.1.0",
-    "tailwindcss": "^3.3.6"
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwind-bootstrap-grid": "^7.0.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "overrides": {
+    "anymatch": {
+      "picomatch": "^2.3.2"
+    },
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "^6.1.5"
+    },
+    "tailwind-bootstrap-grid": {
+      "zod": "^4.6.7"
+    },
+    "yaml": "^2.8.3"
   }
 }

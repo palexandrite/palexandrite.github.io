@@ -1,128 +1,108 @@
 {{ define "main" }}
-  <section class="section pt-7">
-    <div class="container">
-      <div class="row justify-center">
-        <article class="lg:col-10">
+  <section class="section article-page">
+    <div class="container article-container">
+      <article class="article-layout">
           {{ $image:= .Params.image }}
+          {{ $bgimage := resources.Get "images/highlight.svg"}}
+          <style>
+            mark.brushed::before {
+              --brush-image: url('{{ $bgimage.RelPermalink | safeURL }}');
+            }
+          </style>
+          <header class="article-hero">
+            <p class="article-eyebrow">
+              <span class="article-eyebrow-mark"></span>
+              {{ if eq site.Language.Lang "ru" }}ЗАПИСИ / {{ else }}FIELD NOTES / {{ end }}{{ time.Format "2006" .PublishDate }}
+            </p>
+            <h1 class="article-title">
+              <mark class="brushed dark:text-green-300/80">{{ .Title }}</mark>
+            </h1>
+            <div class="article-meta">
+              <a class="article-author" href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
+                <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+                <span>{{ .Params.author }}</span>
+              </a>
+              <span class="article-meta-divider" aria-hidden="true"></span>
+              <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                {{ time.Format ":date_long" .PublishDate }}
+              </time>
+              <span class="article-meta-divider" aria-hidden="true"></span>
+              <span>
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                {{ if eq site.Language.Lang "ru" }}{{ .ReadingTime }} мин чтения{{ else }}{{ .ReadingTime }} min read{{ end }}
+              </span>
+            </div>
+          </header>
+
           {{ if $image }}
-            <div class="mb-10">
+            <div class="article-cover">
               {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full rounded") }}
             </div>
           {{ end }}
 
-          {{ $bgimage := resources.Get "images/highlight.svg"}}
-          <style>
-            mark.brushed::before {
-              background: url('{{ $bgimage.RelPermalink | safeURL }}');
-              background-repeat: no-repeat;
-              background-size: 98% 2rem;
-            }
-          </style>
-          <header>
-              <h1 class="mb-4">
-                <mark class="brushed dark:text-green-300/80">{{ .Title }}</mark>
-              </h1>
-          </header>
-
-          <ul class="mb-4 text-slate-300">
-            <li class="mr-4 inline-block">
-              <a
-                href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
-                <i class="fa-regular fa-circle-user mr-2"></i
-                >{{ .Params.author }}
-              </a>
-            </li>
-            <li class="mr-4 inline-block">
-              <i class="fa-regular fa-clock mr-2"></i>
-              {{ time.Format ":date_long" .PublishDate }}
-            </li>
-          </ul>
-          <div class="content mb-10">
+          <div class="content article-content">
             {{ .Content }}
           </div>
-          <div class="row items-start justify-between">
-            <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
 
-              <h5 class="mr-3">{{ i18n "tags" }}&nbsp;:</h5>
-
-              <ul>
-                {{ $tags := .Params.tags }}
-
-                {{ range $index, $value := $tags }}
-
-                  <li class="inline-block">
-                    <a
-                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                      href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-
-                      {{ $uppered := . | upper }}
-
-                      {{ $isUppered := eq . $uppered }}
-
-                      {{ if eq site.LanguageCode "ru" }}
-
-                        {{ if $isUppered }}
-
-                          {{ i18n . }}
-
+          <footer class="article-footer">
+            {{ with .Params.tags }}
+              <div class="article-taxonomy">
+                <div class="article-footer-label">
+                  <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
+                  <span>{{ i18n "tags" }}</span>
+                </div>
+                <ul class="article-tags">
+                  {{ range . }}
+                    {{ $tag := . }}
+                    {{ $uppered := . | upper }}
+                    {{ $isUppered := eq . $uppered }}
+                    <li>
+                      <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
+                        {{ if eq site.Language.Locale "ru" }}
+                          {{ if $isUppered }}{{ i18n . }}{{ else }}{{ i18n . | humanize }}{{ end }}
                         {{ else }}
-
-                          {{ i18n . | humanize }}
-
+                          {{ if $isUppered }}{{ $tag }}{{ else }}{{ $tag | humanize }}{{ end }}
                         {{ end }}
-
-                      {{ else }}
-
-                        {{ if $isUppered }}
-
-                          {{ . }}
-
-                        {{ else }}
-
-                          {{ . | humanize }}
-
-                        {{ end }}
-
-                      {{ end }}
-                      
-                    </a>
-                  </li>
-
-                {{ end }}
-              </ul>
-            </div>
-            <div class="lg:col-4 flex flex-col">
-              <div>
-                {{ i18n "share" }}:
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
               </div>
-              <div class="flex items-center">
-                {{ partial "social-share" (dict "Context" . "Class" "share-icons") }}
+            {{ end }}
+            <div class="article-share">
+              <div class="article-footer-label">
+                <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+                <span>{{ i18n "share" }}</span>
               </div>
+              {{ partial "social-share" (dict "Context" . "Class" "share-icons article-share-icons") }}
             </div>
-          </div>
-          <!-- comments -->
-          {{/*  {{ if site.DisqusShortname }}
-            <div class="mt-20">
-              {{ template "_internal/disqus.html" . }}
-            </div>
-          {{ end }}  */}}
-        </article>
-      </div>
+          </footer>
+      </article>
 
       <!-- Related posts -->
       {{ $related := (where site.RegularPages "Section" "in" site.Params.mainSections) | intersect (where site.RegularPages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
       {{ $related = $related | shuffle | first 3 }}
       {{ with $related }}
-        <div class="section pb-0">
-          <h2 class="h3 mb-12">{{ i18n "related_posts" }}</h2>
-          <div class="row">
+        <section class="article-related">
+          <div class="article-related-heading">
+            <div>
+              <p class="article-eyebrow">
+                <span class="article-eyebrow-mark"></span>
+                {{ if eq site.Language.Lang "ru" }}ДАЛЬШЕ ПО ТЕМЕ{{ else }}KEEP EXPLORING{{ end }}
+              </p>
+              <h2>{{ i18n "related_posts" }}</h2>
+            </div>
+            <span class="article-related-count">0{{ len . }}</span>
+          </div>
+          <div class="article-related-grid">
             {{ range . }}
-              <div class="lg:col-4">
+              <div class="article-related-card">
                 {{ partial "components/blog-card" . }}
               </div>
             {{ end }}
           </div>
-        </div>
+        </section>
       {{ end }}
     </div>
   </section>

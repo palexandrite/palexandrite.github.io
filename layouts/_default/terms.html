@@ -32,7 +32,7 @@
                 href="{{ .Page.Permalink }}"
                 class="bg-theme-light text-dark dark:bg-darkmode-theme-light dark:text-darkmode-dark block rounded px-4 py-2 text-xl">
 
-                {{ if eq site.LanguageCode "ru" }}
+                {{ if eq site.Language.Locale "ru" }}
 
                   {{ i18n .Page.Title | humanize }}
 

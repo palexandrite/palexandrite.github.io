@@ -1,4 +1,4 @@
-module hugoplate.netlify.app
+module github.com/palexandrite/palexandrite.github.io
 
 go 1.20
 

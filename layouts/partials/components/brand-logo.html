@@ -1,0 +1,9 @@
+{{ if .Context.IsHome }}
+  <span class="{{ .Class }}">
+    {{ partial "logo" }}
+  </span>
+{{ else }}
+  <a class="{{ .Class }}" href="{{ site.Home.RelPermalink }}">
+    {{ partial "logo" }}
+  </a>
+{{ end }}

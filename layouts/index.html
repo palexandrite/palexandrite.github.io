@@ -6,8 +6,10 @@
         <div class="container">
         <div class="row justify-center">
             <div class="lg:col-7 mb-8 text-center">
-            <h1 class="mb-4">
-                {{ .title | markdownify }}
+            <h1 class="hero-title mb-4">
+                <span class="sr-only">{{ .title | plainify }}</span>
+                <span class="hero-title-reserved" aria-hidden="true">{{ .title | markdownify }}</span>
+                <span class="hero-title-typewriter" aria-hidden="true">{{ .title | markdownify }}</span>
             </h1>
             <p class="mb-8">
                 {{ .content | markdownify }}
@@ -22,7 +24,14 @@
             {{ end }}
             </div>
             <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" ) }}
+            {{ $image := resources.Get (strings.TrimPrefix "/" .image) }}
+            <img
+                src="{{ $image.RelPermalink }}"
+                width="{{ $image.Width }}"
+                height="{{ $image.Height }}"
+                alt="Banner image"
+                loading="eager"
+                class="mx-auto lg:!max-w-[800px]" />
             </div>
         </div>
         </div>

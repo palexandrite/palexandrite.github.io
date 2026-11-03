@@ -3,9 +3,9 @@ stages:
 
 variables:
   HUGO_ENV: production
-  HUGO_VERSION: "0.118.2"
+  HUGO_VERSION: "0.158.0"
   GO_VERSION: "1.20.5"
-  NODE_VERSION: "18.16.1"
+  NODE_VERSION: "22"
 
 cache:
   paths:
@@ -31,7 +31,6 @@ default:
 pages:
   stage: build
   script:
-    - npm run project-setup
     - npm run build
   artifacts:
     paths:

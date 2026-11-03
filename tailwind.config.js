@@ -28,8 +28,6 @@ if (theme.fonts.font_family.secondary) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./hugo_stats.json"],
-  safelist: [{ pattern: /^swiper-/ }],
   darkMode: "class",
   theme: {
     screens: {
@@ -38,10 +36,6 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
-    },
-    container: {
-      center: true,
-      padding: "2rem",
     },
     extend: {
       colors: {
@@ -88,15 +82,20 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwind-bootstrap-grid")({
-      generateContainer: false,
-      gridGutterWidth: "2rem",
-      gridGutters: {
-        1: "0.25rem",
-        2: "0.5rem",
-        3: "1rem",
-        4: "1.5rem",
-        5: "3rem",
-      },
+      generate_container: false,
+      grid_gutter_width: "2rem",
+      grid_gutters: [
+        "1",
+        "0.25rem",
+        "2",
+        "0.5rem",
+        "3",
+        "1rem",
+        "4",
+        "1.5rem",
+        "5",
+        "3rem",
+      ],
     }),
   ],
 };

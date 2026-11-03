@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@source "./hugo_stats.json";
+@source "./layouts";
+@source "./content";
+@config "./tailwind.config.js";
+
+@theme {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
