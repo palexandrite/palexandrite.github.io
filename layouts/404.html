@@ -1,24 +1,48 @@
 {{ define "main" }}
-  <section class="section-sm text-center">
+  <section class="not-found-page">
     <div class="container">
-      <div class="row justify-center">
-        <div class="sm:col-10 md:col-8 lg:col-6">
-          <span
-            class="text-[8rem] block font-bold text-dark dark:text-darkmode-dark">
-            404
-          </span>
-          <h1 class="h2 mb-4">Page not found</h1>
-          <div class="content">
-            <p>
-              The page you are looking for might have been removed, had its name
-              changed, or is temporarily unavailable.
+      <div class="not-found-card">
+        <div class="not-found-topline">
+          <span class="not-found-mark" aria-hidden="true"></span>
+          <span>Lost in the margins</span>
+          <span class="not-found-code">ERROR / 404</span>
+        </div>
+
+        <div class="not-found-content">
+          <div class="not-found-copy">
+            <p class="not-found-eyebrow">A wrong turn, not a dead end</p>
+            <h1>Looks like you’ve drifted off course.</h1>
+            <p class="not-found-description">
+              The page you’re looking for has moved, disappeared, or was never
+              here in the first place.
             </p>
+            <div class="not-found-actions">
+              <a href="{{ site.BaseURL | relLangURL }}" class="btn btn-primary">
+                Back to home
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="not-found-secondary-link" href="{{ "blog/" | relLangURL }}">
+                Explore the journal
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
-          <a
-            href="{{ site.BaseURL | relLangURL }}"
-            class="btn btn-primary mt-8">
-            Back to home
-          </a>
+
+          <div class="not-found-art" aria-hidden="true">
+            <div class="not-found-orbit not-found-orbit-one"></div>
+            <div class="not-found-orbit not-found-orbit-two"></div>
+            <div class="not-found-orbit not-found-orbit-three"></div>
+            <span class="not-found-planet"></span>
+            <span class="not-found-star not-found-star-one">✳</span>
+            <span class="not-found-star not-found-star-two">✳</span>
+            <span class="not-found-number">404</span>
+            <span class="not-found-art-caption">Somewhere, not here.</span>
+          </div>
+        </div>
+
+        <div class="not-found-footer">
+          <span>PAGE NOT FOUND</span>
+          <span>TAKE A BREATH. FIND YOUR WAY BACK.</span>
         </div>
       </div>
     </div>

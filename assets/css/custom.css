@@ -738,6 +738,309 @@ mark.brushed {
   }
 }
 
+.not-found-page {
+  padding: clamp(2.5rem, 7vw, 6.5rem) 0;
+}
+
+.not-found-card {
+  --not-found-ink: #171622;
+  --not-found-muted: #72717d;
+  --not-found-line: rgb(23 22 34 / 12%);
+  position: relative;
+  max-width: 1120px;
+  min-height: 34rem;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 5vw, 3.75rem);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(ellipse at 82% 48%, rgb(130 117 199 / 12%), transparent 34%),
+    radial-gradient(ellipse at 96% 8%, rgb(99 167 173 / 10%), transparent 30%),
+    linear-gradient(135deg, #fff 18%, #f7f6fa 100%);
+  color: var(--not-found-ink);
+}
+
+.not-found-topline,
+.not-found-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--not-found-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.not-found-topline {
+  justify-content: flex-start;
+  gap: 0.7rem;
+}
+
+.not-found-mark {
+  width: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, #8275c7, #63a7ad);
+}
+
+.not-found-code {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.not-found-content {
+  position: relative;
+  display: grid;
+  min-height: 27rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.95fr);
+  align-items: center;
+}
+
+.not-found-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 34rem;
+  padding: 3rem 0;
+}
+
+.not-found-eyebrow {
+  margin: 0 0 1.1rem;
+  color: #8275c7;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.not-found-copy h1 {
+  max-width: 10ch;
+  margin: 0;
+  color: var(--not-found-ink);
+  font-size: clamp(2.8rem, 6.4vw, 5.25rem);
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.not-found-description {
+  max-width: 27rem;
+  margin: 1.5rem 0 0;
+  color: var(--not-found-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.not-found-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 999px;
+}
+
+.not-found-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--not-found-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.not-found-secondary-link:hover {
+  color: #8275c7;
+}
+
+.not-found-secondary-link span {
+  font-size: 1.1rem;
+  transition: transform 160ms ease;
+}
+
+.not-found-secondary-link:hover span {
+  transform: translateX(3px);
+}
+
+.not-found-art {
+  position: absolute;
+  inset: 0 -3rem 0 44%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgb(23 22 34 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(23 22 34 / 3%) 1px, transparent 1px);
+  background-position: center;
+  background-size: 3rem 3rem;
+  mask-image: radial-gradient(ellipse, #000 32%, transparent 76%);
+}
+
+.not-found-orbit {
+  position: absolute;
+  width: min(74%, 27rem);
+  aspect-ratio: 1;
+  border: 1px solid rgb(130 117 199 / 24%);
+  border-radius: 50%;
+}
+
+.not-found-orbit-one {
+  transform: scaleY(0.42) rotate(-35deg);
+}
+
+.not-found-orbit-two {
+  transform: scaleY(0.68) rotate(45deg);
+}
+
+.not-found-orbit-three {
+  width: min(62%, 22rem);
+  border-color: rgb(99 167 173 / 26%);
+  transform: rotate(20deg);
+}
+
+.not-found-planet {
+  position: absolute;
+  top: 24%;
+  left: 23%;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: #8275c7;
+  box-shadow: 0 0 1.25rem rgb(130 117 199 / 58%);
+}
+
+.not-found-number {
+  position: relative;
+  color: transparent;
+  background: linear-gradient(130deg, #252333 14%, #8275c7 62%, #63a7ad 100%);
+  background-clip: text;
+  font-size: clamp(7rem, 17vw, 14rem);
+  font-weight: 700;
+  letter-spacing: -0.1em;
+  line-height: 1;
+  -webkit-text-stroke: 1px rgb(130 117 199 / 8%);
+}
+
+.not-found-star {
+  position: absolute;
+  color: #8275c7;
+  font-size: 0.8rem;
+}
+
+.not-found-star-one {
+  top: 28%;
+  right: 20%;
+}
+
+.not-found-star-two {
+  bottom: 24%;
+  left: 20%;
+  color: #63a7ad;
+  font-size: 0.55rem;
+}
+
+.not-found-art-caption {
+  position: absolute;
+  right: 4rem;
+  bottom: 2rem;
+  color: var(--not-found-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.not-found-footer {
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--not-found-line);
+  font-size: 0.62rem;
+}
+
+.dark .not-found-card {
+  --not-found-ink: #f5f3fa;
+  --not-found-muted: #b4afb6;
+  --not-found-line: rgb(255 255 255 / 13%);
+  border-color: #3e3e3e;
+  background:
+    radial-gradient(ellipse at 82% 48%, rgb(130 117 199 / 18%), transparent 34%),
+    radial-gradient(ellipse at 96% 8%, rgb(99 167 173 / 12%), transparent 30%),
+    linear-gradient(135deg, #222 18%, #1c1c1c 100%);
+}
+
+.dark .not-found-art {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
+}
+
+.dark .not-found-number {
+  background-image: linear-gradient(130deg, #fff 14%, #c4b5fd 62%, #93c5fd 100%);
+}
+
+@media (max-width: 767px) {
+  .not-found-card {
+    min-height: auto;
+  }
+
+  .not-found-content {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .not-found-art {
+    position: relative;
+    order: -1;
+    inset: auto;
+    width: 100%;
+    height: 13rem;
+    flex: 0 0 13rem;
+    margin: 0.75rem 0 0;
+    opacity: 1;
+  }
+
+  .not-found-copy {
+    padding: 1rem 0 2rem;
+  }
+
+  .not-found-copy h1 {
+    max-width: 9ch;
+  }
+
+  .not-found-number {
+    font-size: clamp(6rem, 27vw, 8rem);
+  }
+
+  .not-found-art-caption {
+    right: 0;
+    bottom: 0.5rem;
+  }
+
+  .not-found-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found-secondary-link,
+  .not-found-secondary-link span {
+    transition: none;
+  }
+}
+
 mark.brushed::before {
   content: "";
   position: absolute;
