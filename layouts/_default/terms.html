@@ -1,54 +1,49 @@
 {{ define "main" }}
-
   {{ .Scratch.Set "isShouldBeTranslated" true }}
+  {{ $title := .Title | humanize }}
+  {{ if eq site.Language.Locale "ru" }}
+    {{ $title = (i18n (.Title | lower)) | default $title }}
+  {{ end }}
+  {{ $heroTitleClass := "archive-hero-title" }}
+  {{ $kicker := i18n "tag_archive_kicker" }}
+  {{ if eq .Data.Plural "tags" }}
+    {{ $heroTitleClass = "archive-hero-title archive-hero-title--tag" }}
+  {{ else if eq .Data.Plural "categories" }}
+    {{ $kicker = i18n "category_archive_kicker" }}
+  {{ end }}
 
-  {{ partial "page-header" . }}
+  <section class="archive-page">
+    <div class="container archive-container">
+      <header class="archive-hero archive-hero--terms">
+        <div class="archive-hero-copy">
+          <p class="archive-eyebrow">{{ $kicker }}</p>
+          <h1 class="{{ $heroTitleClass }}">{{ $title }}</h1>
+        </div>
+      </header>
 
-
-  <section class="section">
-    <div class="container">
-      <ul class="text-center">
-        {{/* categories */}}
-        {{ if eq .Permalink (`categories/` | absLangURL) }}
+      <ul class="archive-terms">
+        {{ if eq .Data.Plural "categories" }}
           {{ range site.Taxonomies.categories.ByCount }}
-            <li class="m-3 inline-block">
-              <a
-                href="{{ .Page.Permalink }}"
-                class="bg-theme-light text-dark dark:bg-darkmode-theme-light dark:text-darkmode-dark block rounded px-4 py-2 text-xl">
-                {{ .Page.Title }}
-                <span class="bg-body dark:bg-darkmode-body ml-2 rounded px-2">
-                  {{ .Count }}
-                </span>
+            <li>
+              <a href="{{ .Page.Permalink }}">
+                <span>{{ .Page.Title }}</span>
+                <span class="archive-term-count">{{ .Count }}</span>
               </a>
             </li>
           {{ end }}
-        {{ end }}
-        {{/* tags */}}
-        {{ if eq .Permalink (`tags/` | absLangURL) }}
-
+        {{ else if eq .Data.Plural "tags" }}
           {{ range site.Taxonomies.tags.ByCount }}
-            <li class="m-3 inline-block">
-              <a
-                href="{{ .Page.Permalink }}"
-                class="bg-theme-light text-dark dark:bg-darkmode-theme-light dark:text-darkmode-dark block rounded px-4 py-2 text-xl">
-
-                {{ if eq site.Language.Locale "ru" }}
-
-                  {{ i18n .Page.Title | humanize }}
-
-                {{ else }}
-
-                  {{ .Page.Title | humanize }}
-
-                {{ end }}
-
-                <span class="bg-body dark:bg-darkmode-body ml-2 rounded px-2">
-                  {{ .Count }}
-                </span>
+            {{ $termTitle := .Page.Title | humanize }}
+            {{ if eq site.Language.Locale "ru" }}
+              {{ $termTitle = (i18n (.Page.Title | lower)) | default $termTitle }}
+            {{ end }}
+            <li>
+              <a href="{{ .Page.Permalink }}">
+                <span>{{ $termTitle }}</span>
+                <span class="archive-term-count">{{ .Count }}</span>
               </a>
             </li>
           {{ end }}
-
         {{ end }}
       </ul>
     </div>

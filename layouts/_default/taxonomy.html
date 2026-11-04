@@ -1,37 +1,33 @@
 {{ define "main" }}
+  {{ $paginator := .Paginate (.Pages.ByPublishDate.Reverse) 5 }}
+  {{ $title := .Title | humanize }}
+  {{ if eq site.Language.Locale "ru" }}
+    {{ $title = (i18n (.Title | lower)) | default $title }}
+  {{ end }}
+  {{ $heroTitleClass := "archive-hero-title" }}
+  {{ $kicker := i18n "tag_archive_kicker" }}
+  {{ if eq .Data.Plural "tags" }}
+    {{ $heroTitleClass = "archive-hero-title archive-hero-title--tag" }}
+  {{ else if eq .Data.Plural "categories" }}
+    {{ $kicker = i18n "category_archive_kicker" }}
+  {{ end }}
 
-    {{ .Scratch.Set "isShouldBeTranslated" true }}
-
-    {{ partial "page-header" . }}
-
-    <section class="section">
-        <div class="container">
-            <div class="row gx-5">
-
-                <!-- blog posts -->
-                <div class="lg:col-8">
-                    {{ range .Pages.GroupByPublishDate "2006" }}
-                        <div class="flex max-md:flex-col mb-6">
-                            <div class="mr-7 opacity-60 text-2xl">{{ .Key }}</div>
-
-                            <ul class="grow">
-                                {{ range .Pages }}
-                                    <li class="border-b border-dashed mb-3">
-                                        <a href="{{ .RelPermalink }}" class="flex justify-between items-baseline pb-3 hover:text-sky-700 dark:hover:text-sky-200">
-                                            <span>{{ .Title }}</span>
-                                            <span class="shrink-0 opacity-60">
-                                                {{ time.Format ":date_long" .PublishDate }}
-                                            </span>
-                                        </a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-                        </div>
-                    {{ end }}
-                </div>
-
-            </div>
+  <section class="archive-page">
+    <div class="container archive-container">
+      <header class="archive-hero">
+        <div class="archive-hero-copy">
+          <p class="archive-eyebrow">{{ $kicker }}</p>
+          <h1 class="{{ $heroTitleClass }}">{{ $title }}</h1>
+          {{ with .Description }}<p>{{ . }}</p>{{ end }}
         </div>
-    </section>
+        <div class="archive-count" aria-label="{{ i18n "archive_article_count" }}">
+          <span class="archive-count-number">{{ len .Pages }}</span>
+          <span class="archive-count-label">{{ i18n "archive_article_count" }}</span>
+        </div>
+      </header>
 
+      {{ partial "components/archive-content" (dict "Page" . "Pages" $paginator.Pages "AllPages" .Pages) }}
+      <div class="archive-pagination">{{ partial "components/pagination" . }}</div>
+    </div>
+  </section>
 {{ end }}

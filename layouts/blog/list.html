@@ -1,10 +1,11 @@
 {{ define "main" }}
+  {{ $paginator := .Paginate (.Pages.ByPublishDate.Reverse) 5 }}
   <section class="archive-page">
     <div class="container archive-container">
       <header class="archive-hero">
         <div class="archive-hero-copy">
           <p class="archive-eyebrow">{{ .Params.archive_kicker }}</p>
-          <h1>{{ .Title }}</h1>
+          <h1 class="archive-hero-title">{{ .Title }}</h1>
           <p>{{ .Description }}</p>
         </div>
         <div class="archive-count" aria-label="{{ .Params.archive_count_label }}">
@@ -13,55 +14,8 @@
         </div>
       </header>
 
-      <div class="archive-layout">
-        <div class="archive-timeline">
-          {{ range .Pages.GroupByPublishDate "2006" }}
-            <section class="archive-year" aria-labelledby="archive-year-{{ .Key }}">
-              <header class="archive-year-heading">
-                <h2 id="archive-year-{{ .Key }}">{{ .Key }}</h2>
-                <span>{{ len .Pages }} {{ $.Params.archive_year_label }}</span>
-              </header>
-
-              <ol class="archive-posts">
-                {{ range .Pages }}
-                  <li class="archive-post">
-                    <article class="archive-post-link">
-                      <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
-                        {{ time.Format ":date_long" .PublishDate }}
-                      </time>
-                      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                      {{ with .Summary }}
-                        <p>{{ . | plainify | truncate 190 }}</p>
-                      {{ end }}
-                      {{ with .Params.tags }}
-                        <ul class="archive-post-tags" aria-label="{{ $.Params.archive_topics_label }}">
-                          {{ range . }}
-                            <li>
-                              <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                                <i class="fa-solid fa-tag" aria-hidden="true"></i>
-                                <span>{{ . | humanize }}</span>
-                              </a>
-                            </li>
-                          {{ end }}
-                        </ul>
-                      {{ end }}
-                      <a class="archive-post-arrow" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
-                        <span aria-hidden="true">↗</span>
-                      </a>
-                    </article>
-                  </li>
-                {{ end }}
-              </ol>
-            </section>
-          {{ end }}
-        </div>
-
-        <aside class="archive-sidebar" aria-label="{{ .Params.archive_browse_label }}">
-          <p class="archive-sidebar-heading">{{ .Params.archive_browse_label }}</p>
-          {{ $widget := site.Params.widgets.sidebar }}
-          {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" .) }}
-        </aside>
-      </div>
+      {{ partial "components/archive-content" (dict "Page" . "Pages" $paginator.Pages "AllPages" .Pages) }}
+      <div class="archive-pagination">{{ partial "components/pagination" . }}</div>
     </div>
   </section>
 {{ end }}

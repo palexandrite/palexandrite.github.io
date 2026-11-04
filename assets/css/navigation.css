@@ -12,7 +12,7 @@
   }
 
   .header {
-    @apply bg-body dark:bg-darkmode-body py-6;
+    @apply bg-body dark:bg-darkmode-body py-3;
   }
 
   .navbar {
@@ -32,7 +32,7 @@
   }
 
   .nav-link {
-    @apply text-dark hover:text-primary dark:text-darkmode-dark block p-3 font-semibold transition lg:px-2 lg:py-3;
+    @apply text-dark hover:text-primary dark:text-darkmode-dark block p-3 font-semibold transition lg:px-2 lg:py-2;
   }
 
   .nav-dropdown {

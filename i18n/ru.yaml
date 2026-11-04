@@ -16,6 +16,36 @@
 - id: tags
   translation: Тэги
 
+- id: tag_archive_kicker
+  translation: ПУБЛИКАЦИИ ПО ТЕГУ
+
+- id: category_archive_kicker
+  translation: ПУБЛИКАЦИИ ПО КАТЕГОРИИ
+
+- id: author_archive_kicker
+  translation: СТАТЬИ АВТОРА
+
+- id: archive_article_count
+  translation: публикаций
+
+- id: archive_year_label
+  translation: публикаций
+
+- id: archive_topics_label
+  translation: Темы
+
+- id: archive_browse_label
+  translation: ПО ТЕМАМ
+
+- id: pagination_label
+  translation: Пагинация
+
+- id: pagination_previous
+  translation: Назад
+
+- id: pagination_next
+  translation: Далее
+
 - id: toc
   translation: Содержимое
 

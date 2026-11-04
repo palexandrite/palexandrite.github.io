@@ -1,0 +1,58 @@
+{{ $page := .Page }}
+{{ $pages := .Pages }}
+{{ $allPages := .AllPages }}
+
+<div class="archive-layout">
+  <div class="archive-timeline">
+    {{ range $pages.GroupByPublishDate "2006" }}
+      {{ $year := .Key }}
+      {{ $yearCount := 0 }}
+      {{ range $allPages.GroupByPublishDate "2006" }}
+        {{ if eq .Key $year }}{{ $yearCount = len .Pages }}{{ end }}
+      {{ end }}
+      <section class="archive-year" aria-labelledby="archive-year-{{ .Key }}">
+        <header class="archive-year-heading">
+          <h2 id="archive-year-{{ .Key }}">{{ .Key }}</h2>
+          <span>{{ $yearCount }} {{ i18n "archive_year_label" }}</span>
+        </header>
+
+        <ol class="archive-posts">
+          {{ range .Pages }}
+            <li class="archive-post">
+              <article class="archive-post-link">
+                <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                  {{ time.Format ":date_long" .PublishDate }}
+                </time>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with .Summary }}
+                  <p>{{ . | plainify | truncate 190 }}</p>
+                {{ end }}
+                {{ with .Params.tags }}
+                  <ul class="archive-post-tags" aria-label="{{ i18n "archive_topics_label" }}">
+                    {{ range . }}
+                      <li>
+                        <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
+                          <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                          <span>{{ . | humanize }}</span>
+                        </a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+                <a class="archive-post-arrow" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            </li>
+          {{ end }}
+        </ol>
+      </section>
+    {{ end }}
+  </div>
+
+  <aside class="archive-sidebar" aria-label="{{ i18n "archive_browse_label" }}">
+    <p class="archive-sidebar-heading">{{ i18n "archive_browse_label" }}</p>
+    {{ $widget := site.Params.widgets.sidebar }}
+    {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" $page) }}
+  </aside>
+</div>

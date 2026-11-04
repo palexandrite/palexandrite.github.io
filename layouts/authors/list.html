@@ -1,16 +1,67 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
+  {{ if ne .RelPermalink (`authors/` | relLangURL) }}
+    {{ $authorPages := where site.RegularPages "Params.author" "==" .Title }}
+    {{ $paginator := .Paginate ($authorPages.ByPublishDate.Reverse) 5 }}
 
+    <section class="archive-page">
+      <div class="container archive-container">
+        <header class="archive-hero archive-hero--author">
+          <div class="archive-author-profile">
+            {{ $image := .Params.image }}
+            {{ if $image }}
+              <div class="archive-author-portrait">
+                {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "archive-author-avatar" "Size" "160x160") }}
+              </div>
+            {{ else if .Params.Email }}
+              <img
+                class="archive-author-avatar"
+                alt="{{ .Title }}"
+                height="128"
+                width="128"
+                src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
+            {{ end }}
 
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        {{ range .RegularPages }}
-          <div class="md:col-6 lg:col-4 mb-14">
-            {{ partial "components/author-card" . }}
+            <div class="archive-hero-copy">
+              <p class="archive-eyebrow">{{ i18n "author_archive_kicker" }}</p>
+              <h1 class="archive-hero-title archive-hero-title--author">{{ .Title }}</h1>
+              {{ with .Content }}
+                <div class="archive-author-bio">{{ . }}</div>
+              {{ end }}
+              <ul class="social-icons archive-author-socials">
+                {{ range .Params.social }}
+                  <li>
+                    <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow" aria-label="{{ .name }}">
+                      <i class="{{ .icon }}" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
           </div>
-        {{ end }}
+
+          <div class="archive-count" aria-label="{{ i18n "archive_article_count" }}">
+            <span class="archive-count-number">{{ len $authorPages }}</span>
+            <span class="archive-count-label">{{ i18n "archive_article_count" }}</span>
+          </div>
+        </header>
+
+        {{ partial "components/archive-content" (dict "Page" . "Pages" $paginator.Pages "AllPages" $authorPages) }}
+        <div class="archive-pagination">{{ partial "components/pagination" . }}</div>
       </div>
-    </div>
-  </section>
+    </section>
+  {{ else }}
+    {{ partial "page-header" . }}
+
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          {{ range .Sections }}
+            <div class="md:col-6 lg:col-4 mb-14">
+              {{ partial "components/author-card" . }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
 {{ end }}

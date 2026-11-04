@@ -16,6 +16,36 @@
 - id: tags
   translation: Tags
 
+- id: tag_archive_kicker
+  translation: BROWSE BY TOPIC
+
+- id: category_archive_kicker
+  translation: BROWSE BY CATEGORY
+
+- id: author_archive_kicker
+  translation: ARTICLES BY
+
+- id: archive_article_count
+  translation: articles
+
+- id: archive_year_label
+  translation: articles
+
+- id: archive_topics_label
+  translation: Topics
+
+- id: archive_browse_label
+  translation: EXPLORE THE ARCHIVE
+
+- id: pagination_label
+  translation: Pagination
+
+- id: pagination_previous
+  translation: Previous
+
+- id: pagination_next
+  translation: Next
+
 - id: toc
   translation: Table of Contents
 
