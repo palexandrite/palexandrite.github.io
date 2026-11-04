@@ -16,6 +16,11 @@ name = "Blog"
 url = "blog/"
 weight = 3
 
+[[main]]
+name = "Projects"
+url = "projects/"
+weight = 4
+
 # [[main]]
 # name = "Elements"
 # url = "elements/"
@@ -62,6 +67,11 @@ weight = 1
 name = "Blog"
 url = "blog/"
 weight = 2
+
+[[footer]]
+name = "Projects"
+url = "projects/"
+weight = 3
 
 # [[footer]]
 # name = "Elements"

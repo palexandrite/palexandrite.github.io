@@ -1,0 +1,42 @@
+{{ define "main" }}
+  <section class="projects-page">
+    <div class="container projects-container">
+      <header class="projects-hero">
+        <div>
+          <p class="projects-kicker">{{ .Params.project_kicker }}</p>
+          <h1>{{ .Title }}</h1>
+          <p>{{ .Description }}</p>
+        </div>
+        <div class="projects-count">
+          <span>{{ len .Pages }}</span>
+          <small>{{ .Params.project_count_label }}</small>
+        </div>
+      </header>
+
+      <div class="projects-grid">
+        {{ range .Pages.ByWeight }}
+          <article class="project-card">
+            <div class="project-card-preview" aria-hidden="true">
+              <span class="project-preview-window">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="project-preview-board">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="project-preview-check">✓</span>
+            </div>
+            <div class="project-card-body">
+              <p class="project-card-type">{{ delimit .Params.technologies " · " }}</p>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p>{{ .Params.summary }}</p>
+              <a class="project-card-link" href="{{ .RelPermalink }}">
+                {{ if eq site.Language.Lang "ru" }}Подробнее{{ else }}Explore project{{ end }}
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

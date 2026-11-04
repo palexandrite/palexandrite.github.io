@@ -5,31 +5,66 @@
 
   // Dropdown Menu Toggler For Mobile
   // ----------------------------------------
-  const dropdownMenuToggler = document.querySelectorAll(
-    ".nav-dropdown > .nav-link",
-  );
+  const navToggle = document.querySelector("#nav-toggle");
+  const navMenu = document.querySelector("#nav-menu");
+  const dropdownMenuToggler = document.querySelectorAll(".nav-dropdown > .nav-link");
 
   dropdownMenuToggler.forEach((toggler) => {
-    toggler?.addEventListener("click", (e) => {
-      e.target.parentElement.classList.toggle("active");
+    toggler.addEventListener("click", (event) => {
+      event.currentTarget.closest(".nav-dropdown")?.classList.toggle("active");
     });
   });
+
+  if (navToggle instanceof HTMLInputElement && navMenu) {
+    const closeNavigation = () => {
+      navToggle.checked = false;
+      document.body.classList.remove("mobile-nav-open");
+    };
+
+    navToggle.addEventListener("change", () => {
+      document.body.classList.toggle("mobile-nav-open", navToggle.checked);
+    });
+
+    navMenu.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("a")) {
+        closeNavigation();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navToggle.checked) {
+        closeNavigation();
+        navToggle.focus();
+      }
+    });
+
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", (event) => {
+      if (event.matches) {
+        closeNavigation();
+      }
+    });
+  }
 
   // Home page title typewriter
   // ----------------------------------------
   const heroTitle = document.querySelector(".hero-title-typewriter");
+  const heroQuote = document.querySelector(".hero-quote-typewriter");
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
-  if (heroTitle && !reduceMotion) {
-    const characters = Array.from(heroTitle.textContent.trim());
+  if (heroTitle && heroQuote && !reduceMotion) {
+    const titleText = heroTitle.textContent.trim();
+    const quoteText = heroQuote.textContent.trim();
+    const characters = Array.from(titleText + quoteText);
     let characterIndex = 0;
     const renderTitle = () => {
-      heroTitle.textContent = characters.slice(0, characterIndex).join("");
+      const currentText = characters.slice(0, characterIndex).join("");
+      heroTitle.textContent = currentText.slice(0, titleText.length);
+      heroQuote.textContent = currentText.slice(titleText.length);
+      heroTitle.classList.toggle("is-typing", characterIndex <= titleText.length);
+      heroQuote.classList.toggle("is-typing", characterIndex > titleText.length);
     };
-
-    heroTitle.classList.add("is-typing");
 
     const deleteNextCharacter = () => {
       characterIndex -= 1;

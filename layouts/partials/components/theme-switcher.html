@@ -58,5 +58,20 @@
         });
       });
     });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key !== "theme") return;
+
+      if (event.newValue === "dark") darkMode = true;
+      else if (event.newValue === "light") darkMode = false;
+      else {
+        darkMode = {{if eq site.Params.theme_default "dark"}}true{{else if eq site.Params.theme_default "light"}}false{{else}}window.matchMedia("(prefers-color-scheme: dark)").matches{{end}};
+      }
+
+      document.documentElement.classList.toggle("dark", darkMode);
+      [].forEach.call(themeSwitch, (ts) => {
+        ts.checked = darkMode;
+      });
+    });
   </script>
 {{ end }}

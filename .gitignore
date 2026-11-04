@@ -6,6 +6,7 @@ Thumbs.db
 .sass-cache
 .vscode
 archetypes
+.github/instructions/add-projects.instructions.md
 npm-debug.log
 node_modules
 builds

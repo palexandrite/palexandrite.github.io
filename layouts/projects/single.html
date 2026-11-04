@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <section class="projects-page">
+    <div class="container project-detail-container">
+      <a class="project-back-link" href="{{ .CurrentSection.RelPermalink }}">
+        <span aria-hidden="true">←</span>
+        {{ if eq site.Language.Lang "ru" }}Все проекты{{ else }}All projects{{ end }}
+      </a>
+
+      <header class="project-detail-hero">
+        <p class="projects-kicker">{{ delimit .Params.technologies " · " }}</p>
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description }}</p>
+        <a class="project-demo-button" href="{{ .Params.demo_url | relURL }}">
+          {{ if eq site.Language.Lang "ru" }}Открыть демо{{ else }}Open the demo{{ end }}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <div class="project-detail-content content">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+{{ end }}

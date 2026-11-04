@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4f0" />
+    <title>Vue Task Board</title>
+    <script>
+      const savedSiteTheme = localStorage.getItem("theme");
+      const useDarkTheme =
+        savedSiteTheme === "dark" ||
+        (!savedSiteTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList.toggle("dark", useDarkTheme);
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="../../" :aria-label="t('back')">
+          <span class="brand-mark">A</span>
+          <span>{{ t('back') }}</span>
+        </a>
+        <div class="topbar-tools">
+          <span class="tech-badge">VUE 3 <span class="status-dot"></span></span>
+          <button
+            class="theme-toggle"
+            type="button"
+            :aria-label="t(isDark ? 'switchToLight' : 'switchToDark')"
+            :aria-pressed="isDark"
+            @click="toggleTheme">
+            <svg v-if="isDark" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+            </svg>
+            <svg v-else viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" />
+            </svg>
+            <span>{{ t(isDark ? "lightTheme" : "darkTheme") }}</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="board">
+        <section class="intro">
+          <p class="eyebrow">{{ t('eyebrow') }}</p>
+          <h1>{{ t('title') }}<span>.</span></h1>
+          <p class="intro-copy">{{ t('intro') }}</p>
+        </section>
+
+        <section class="workspace" :aria-label="t('boardLabel')">
+          <div class="board-heading">
+            <div>
+              <p class="eyebrow">{{ t('workspace') }}</p>
+              <h2>{{ t('today') }}</h2>
+            </div>
+            <div class="progress" :aria-label="progressLabel">
+              <span class="progress-value">{{ completedCount }}<span>/</span>{{ tasks.length }}</span>
+              <span class="progress-caption">{{ t('completed') }}</span>
+            </div>
+          </div>
+
+          <form class="task-form" @submit.prevent="addTask">
+            <label class="sr-only" for="new-task">{{ t('taskPlaceholder') }}</label>
+            <input id="new-task" v-model="newTask" :placeholder="t('taskPlaceholder')" maxlength="100" />
+            <button type="submit" :disabled="!newTask.trim()">{{ t('addTask') }} <span aria-hidden="true">+</span></button>
+          </form>
+
+          <div class="filters" role="group" :aria-label="t('filterTasks')">
+            <button
+              v-for="filter in filters"
+              :key="filter.value"
+              type="button"
+              :class="{ active: activeFilter === filter.value }"
+              :aria-pressed="activeFilter === filter.value"
+              @click="activeFilter = filter.value">
+              {{ t(filter.label) }}
+              <span>{{ filterCount(filter.value) }}</span>
+            </button>
+          </div>
+
+          <ul v-if="visibleTasks.length" class="task-list">
+            <li v-for="task in visibleTasks" :key="task.id" class="task-row" :class="{ done: task.done }">
+              <button
+                class="task-check"
+                type="button"
+                :aria-label="task.done ? t('markIncomplete') : t('markComplete')"
+                :aria-pressed="task.done"
+                @click="toggleTask(task.id)">
+                <span v-if="task.done" aria-hidden="true">✓</span>
+              </button>
+              <span class="task-name">{{ task.title }}</span>
+              <span class="task-tag" :class="`tag-${task.category}`">{{ t(task.category) }}</span>
+              <button class="task-delete" type="button" :aria-label="t('deleteTask')" @click="deleteTask(task.id)">×</button>
+            </li>
+          </ul>
+          <p v-else class="empty-state">{{ t('empty') }}</p>
+
+          <footer class="board-footer">
+            <span><span class="footer-dot"></span>{{ t('savedLocally') }}</span>
+            <button type="button" class="reset-button" @click="resetTasks">{{ t('reset') }}</button>
+          </footer>
+        </section>
+
+        <p class="demo-note">{{ t('note') }}</p>
+      </main>
+    </div>
+  </body>
+</html>

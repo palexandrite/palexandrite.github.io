@@ -6,17 +6,20 @@
         <div class="container">
         <div class="row justify-center">
             <div class="lg:col-7 mb-8 text-center">
-            <h1 class="hero-title mb-4">
-                <span class="sr-only">{{ .title | plainify }}</span>
-                <span class="hero-title-reserved" aria-hidden="true">{{ .title | markdownify }}</span>
-                <span class="hero-title-typewriter" aria-hidden="true">{{ .title | markdownify }}</span>
-            </h1>
-            <p class="mb-8">
-                {{ .content | markdownify }}
-            </p>
+            <blockquote class="hero-quote {{ if eq site.Language.Locale "ru" }}hero-quote--ru{{ end }}">
+                <h1 class="hero-title mb-4">
+                    <span class="sr-only">{{ .title | plainify }} {{ .content | plainify }}</span>
+                    <span class="hero-title-reserved" aria-hidden="true">{{ .title | markdownify }}</span>
+                    <span class="hero-title-typewriter" aria-hidden="true">{{ .title | markdownify }}</span>
+                </h1>
+                <p class="hero-quote-line">
+                    <span class="hero-quote-reserved" aria-hidden="true">{{ .content | markdownify }}</span>
+                    <span class="hero-quote-typewriter" aria-hidden="true">{{ .content | markdownify }}</span>
+                </p>
+            </blockquote>
             {{ with .button }}
                 {{ if .enable }}
-                <a class="btn btn-primary" href="{{ .link | absURL }}">
+                <a class="btn btn-primary mt-3" href="{{ .link | absURL }}">
                     {{ .label }}
                     <i class="fa fa-arrow-right pl-2"></i>
                 </a>

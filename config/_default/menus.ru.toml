@@ -11,6 +11,11 @@ name = "Блог"
 url = "blog/"
 weight = 2
 
+[[main]]
+name = "Проекты"
+url = "projects/"
+weight = 3
+
 
 # footer menu
 [[footer]]
@@ -22,3 +27,8 @@ weight = 1
 name = "Блог"
 url = "blog/"
 weight = 2
+
+[[footer]]
+name = "Проекты"
+url = "projects/"
+weight = 3
